@@ -5,6 +5,30 @@
 body {
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+/* Additional styles for specific text elements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+/* You can also add specific classes for other elements if needed */
+.text-lg {
+  font-weight: 600;
+}
+
+.text-sm {
+  font-weight: 600;
+}
+
+/* Custom class for -4% character spacing */
+.tracking-negative-4 {
+  letter-spacing: -0.04em; /* Adjust this value as needed */
 }
 
 @layer base {

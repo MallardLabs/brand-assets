@@ -5,7 +5,8 @@ import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "600"], // Ensure the weights you need are included
+  weight: ["400", "600"],
+  variable: '--font-inter',
 });
 
 const geistSans = Geist({
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>
