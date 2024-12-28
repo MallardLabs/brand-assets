@@ -4,10 +4,17 @@ import { Download, Home } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { Inter } from "next/font/google"
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: '--font-inter',
+})
 
 export default function BrandAssets() {
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center p-4">
+    <div className={`${inter.variable} min-h-screen bg-black flex flex-col items-center justify-center p-4`}>
       <Card className="w-full max-w-xl bg-[#f5f5f7] backdrop-blur-xl bg-opacity-90 border-0 shadow-2xl">
         <div className="p-8 space-y-8">
           {/* Header Section */}
@@ -24,14 +31,14 @@ export default function BrandAssets() {
                 />
               </div>
               <Separator orientation="vertical" className="h-4 bg-black" />
-              <span className="text-sm font-medium text-zinc-400">Brand Assets</span>
+              <span className="text-lg font-extrabold text-zinc-900">Brand Assets</span>
             </div>
             <Separator className="bg-black" />
           </div>
 
           {/* Content Section */}
           <CardContent className="space-y-6 p-0">
-            <h2 className="text-xl font-medium text-zinc-900">
+            <h2 className="text-2xl font-extrabold text-zinc-900">
               Download the Mallard Labs Brand kit below
             </h2>
             
@@ -44,7 +51,7 @@ export default function BrandAssets() {
                   <Download className="h-4 w-4" />
                 </div>
                 <div className="flex flex-col items-start">
-                  <span>MallardLabs_BrandKit.zip</span>
+                  <span className="font-extrabold text-zinc-900">MallardLabs_BrandKit.zip</span>
                   <span className="text-xs text-zinc-400">Version 1.0</span>
                 </div>
               </div>
