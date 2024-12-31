@@ -1,7 +1,6 @@
 'use client'
 
 import { LoadingScreen } from "@/components/loading";
-import { useState, useEffect, Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inter } from "next/font/google";
