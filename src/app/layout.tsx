@@ -1,4 +1,7 @@
-import type { Metadata } from "next";
+'use client'
+
+import { LoadingScreen } from "@/components/loading";
+import { useState, useEffect, Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Inter } from "next/font/google";
@@ -19,11 +22,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+const metadata = {
+  metadataBase: new URL("https://brand.mallardlabs.xyz"),
   title: "Brand Assets | Mallard Labs",
-  description: "Mallard Labs Brand Assets",
-  icons: {
-    icon: "/favicon.ico",
+  description: "Download the Mallard Lab Brand Kit here.",
+  openGraph: {
+    title: "Brand Assets | Mallard Labs",
+    description: "Download the Mallard Lab Brand Kit here.",
+    images: [
+      {
+        url: "/branddotmallard.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mallard Labs Brand Assets"
+      }
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brand Assets | Mallard Labs",
+    description: "Download the Mallard Lab Brand Kit here.",
+    images: ["/branddotmallard.webp"],
   },
 };
 
@@ -36,10 +56,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
+        <LoadingScreen />
         {children}
       </body>
     </html>
